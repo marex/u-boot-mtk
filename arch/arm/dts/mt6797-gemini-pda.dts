@@ -20,6 +20,12 @@
 		// overwritten by LK. CMDLINE is overridden in kernel config.
 	};
 
+	timer_clk: dummy13m {
+		compatible = "fixed-clock";
+		clock-frequency = <13000000>;
+		#clock-cells = <0>;
+	};
+
 	// pwrap needs a pwrap clock, but MT6797 does not have one. Make a
 	// fake clock to sate the module's hunger.
 	pwrap_clk: dummy40m {
@@ -214,6 +220,14 @@
 			cache-line-size = <64>;
 			cache-sets = <512>;
 		};
+	};
+
+	timer0: timer@10008000 {
+		compatible = "mediatek,timer";
+		reg = <0 0x10008000 0 0x80>;
+		clocks = <&timer_clk>;
+		clock-names = "timer";
+		u-boot,dm-pre-reloc;
 	};
 };
 
