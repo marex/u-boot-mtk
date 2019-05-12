@@ -3,9 +3,6 @@ if ARCH_MEDIATEK
 config SYS_SOC
 	default "mediatek"
 
-config SYS_VENDOR
-	default "mediatek"
-
 choice
 	prompt "MediaTek board select"
 

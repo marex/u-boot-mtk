@@ -1,5 +1,8 @@
 if TARGET_MT7623
 
+config SYS_VENDOR
+	default "mediatek"
+
 config SYS_BOARD
 	default "mt7623"
 
