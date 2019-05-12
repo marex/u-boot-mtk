@@ -9,6 +9,17 @@ config SYS_VENDOR
 choice
 	prompt "MediaTek board select"
 
+config TARGET_MT6797
+	bool "MediaTek MT6797 SoC"
+	select ARM64
+	select ARCH_MISC_INIT
+	help
+	  The MediaTek MT6797 is a ARM64-based SoC with a deka-core
+	  2x Cortex A72 + 8x Cortex A53, including UART, SPI, USB2.0
+	  and OTG, SD and MMC cards, NAND, PWM, Ethernet, IR TX/RX,
+	  I2C, I2S, S/PDIF, and built-in Wi-Fi / Bluetooth combo chip
+	  and several DDR3 and DDR4 options.
+
 config TARGET_MT7623
 	bool "MediaTek MT7623 SoC"
 	select CPU_V7A
