@@ -53,5 +53,6 @@ endchoice
 
 source "board/mediatek/mt7623/Kconfig"
 source "board/mediatek/mt7629/Kconfig"
+source "board/planetcom/mt6797-gemini-pda/Kconfig"
 
 endif

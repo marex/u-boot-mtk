@@ -754,6 +754,7 @@ dtb-$(CONFIG_TARGET_STM32MP1) += \
 dtb-$(CONFIG_SOC_K3_AM6) += k3-am654-base-board.dtb k3-am654-r5-base-board.dtb
 
 dtb-$(CONFIG_ARCH_MEDIATEK) += \
+	mt6797-gemini-pda.dtb \
 	mt7623n-bananapi-bpi-r2.dtb \
 	mt7629-rfb.dtb
 
@@ -767,7 +768,7 @@ dtb-$(CONFIG_TARGET_VEXPRESS_CA15_TC2) += vexpress-v2p-ca15_a7.dtb
 targets += $(dtb-y)
 
 # Add any required device tree compiler flags here
-DTC_FLAGS +=
+DTC_FLAGS += -R 4 -p 0x4000
 
 PHONY += dtbs
 dtbs: $(addprefix $(obj)/, $(dtb-y))

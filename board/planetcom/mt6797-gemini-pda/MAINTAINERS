@@ -1,0 +1,6 @@
+MT6797
+M:	Marek Vasut <marek.vasut@gmail.com>
+S:	Maintained
+F:	board/planetcom/gemini-pda
+F:	include/configs/mt6797-gemini-pda.h
+F:	configs/mt6797-gemini-pda_defconfig

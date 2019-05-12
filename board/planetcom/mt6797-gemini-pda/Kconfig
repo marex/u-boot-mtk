@@ -1,0 +1,20 @@
+if TARGET_MT6797
+
+config SYS_VENDOR
+	default "planetcom"
+
+config SYS_BOARD
+	default "mt6797-gemini-pda"
+
+config SYS_CONFIG_NAME
+	default "mt6797-gemini-pda"
+
+config MTK_SPL_PAD_SIZE
+	hex
+	default 0x10000
+
+config MTK_BROM_HEADER_INFO
+	string
+	default "media=nor"
+
+endif
