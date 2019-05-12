@@ -20,6 +20,12 @@
 		// overwritten by LK. CMDLINE is overridden in kernel config.
 	};
 
+	mmc_clk: dummy25m {
+		compatible = "fixed-clock";
+		clock-frequency = <25000000>;
+		#clock-cells = <0>;
+	};
+
 	timer_clk: dummy13m {
 		compatible = "fixed-clock";
 		clock-frequency = <13000000>;
@@ -220,6 +226,22 @@
 			cache-line-size = <64>;
 			cache-sets = <512>;
 		};
+	};
+
+	mmc0: mmc@11230000 {
+		compatible = "mediatek,mt6797-mmc";
+		reg = <0 0x11230000 0 0x1000>;
+		clocks = <&mmc_clk>, <&mmc_clk>, <&mmc_clk>;	/* FIXME */
+		clock-names = "source", "hclk", "source_cg";
+		status = "okay";
+	};
+
+	mmc1: mmc@11240000 {
+		compatible = "mediatek,mt6797-mmc";
+		reg = <0 0x11240000 0 0x1000>;
+		clocks = <&mmc_clk>, <&mmc_clk>, <&mmc_clk>;	/* FIXME */
+		clock-names = "source", "hclk", "source_cg";
+		status = "okay";
 	};
 
 	timer0: timer@10008000 {
